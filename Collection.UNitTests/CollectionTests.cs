@@ -75,6 +75,18 @@ namespace Collection.UNitTests
             Assert.That(names.ToString(), Is.EqualTo("[Bob, Joe]"));
         }
 
+        [Test]
+        public void Test_Collection_ToStringNestedCollections()
+        {
+            var names = new Collection<string>("Teddy", "Gerry");
+            var nums = new Collection<int>(10, 20);
+            var dates = new Collection<DateTime>();
+            var nested = new Collection<object>(names, nums, dates);
+            string nestedToString = nested.ToString();
+            Assert.That(nestedToString,
+              Is.EqualTo("[[Teddy, Gerry], [10, 20], []]"));
+        }
+
     }
 
 }

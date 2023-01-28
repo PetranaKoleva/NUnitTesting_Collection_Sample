@@ -120,17 +120,5 @@ namespace Collections
             return Is;
         }
 
-        [Test]
-        public void Test_Collection_ToStringNestedCollections(bool @is)
-        {
-            var names = new Collection<string>("Teddy", "Gerry");
-            var nums = new Collection<int>(10, 20);
-            var dates = new Collection<DateTime>();
-            var nested = new Collection<object>(names, nums, dates);
-            string nestedToString = nested.ToString();
-            object Assert = null;
-            Assert.Equals(nestedToString + "[[Teddy, Gerry], [10, 20], []]");
-        }
-
     }
 }
