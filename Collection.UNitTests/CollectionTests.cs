@@ -53,5 +53,13 @@ namespace Collection.UNitTests
             Assert.That(item.ToString(), Is.EqualTo("6"));
         }
 
+        [Test]
+        public void Test_Collection_SetByIndex()
+        {
+            var collection = new Collection<int>(5, 6, 7);
+            collection[1] = 666;
+            Assert.That(collection.ToString(), Is.EqualTo("[5, 666, 7]"));
+        }
+
     }
 }
