@@ -62,6 +62,19 @@ namespace Collection.UNitTests
             Assert.That(collection.ToString(), Is.EqualTo("[5, 666, 7]"));
         }
 
+        [Test]
+        public void Test_Collection_GetByInvalidIndex()
+        {
+            var names = new Collection<string>("Bob", "Joe");
+            Assert.That(() => { var name = names[-1]; },
+              Throws.InstanceOf<ArgumentOutOfRangeException>());
+            Assert.That(() => { var name = names[2]; },
+              Throws.InstanceOf<ArgumentOutOfRangeException>());
+            Assert.That(() => { var name = names[500]; },
+              Throws.InstanceOf<ArgumentOutOfRangeException>());
+            Assert.That(names.ToString(), Is.EqualTo("[Bob, Joe]"));
+        }
+
     }
-    
+
 }
