@@ -6,6 +6,7 @@ namespace Collection.UNitTests
     public class CollectionTests
     {
         private object collection;
+        private object coll;
 
         [Test]
         public void Test_Collection_EmptyConstructor()
@@ -62,4 +63,5 @@ namespace Collection.UNitTests
         }
 
     }
+    
 }
