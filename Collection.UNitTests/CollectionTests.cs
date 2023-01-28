@@ -5,6 +5,7 @@ namespace Collection.UNitTests
 {
     public class CollectionTests
     {
+        private object collection;
 
         [Test]
         public void Test_Collection_EmptyConstructor()
@@ -42,6 +43,14 @@ namespace Collection.UNitTests
             coll.Add("Stefan");
             Assert.AreEqual(coll.ToString(), "[Ivan, Maria, Stefan]");
 
+        }
+
+        [Test]
+        public void Test_Collection_GetByIndex()
+        {
+            var collection = new Collection<int>(5, 6, 7);
+            var item = collection[1];
+            Assert.That(item.ToString(), Is.EqualTo("6"));
         }
 
     }
