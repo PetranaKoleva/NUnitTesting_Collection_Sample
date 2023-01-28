@@ -35,5 +35,14 @@ namespace Collection.UNitTests
             Assert.That(coll.Capacity, Is.GreaterThanOrEqualTo(coll.Count));
         }
 
+        [Test]
+        public void Test_Collection_Add()
+        {
+            var coll = new Collection<string>("Ivan", "Maria");
+            coll.Add("Stefan");
+            Assert.AreEqual(coll.ToString(), "[Ivan, Maria, Stefan]");
+
+        }
+
     }
 }
