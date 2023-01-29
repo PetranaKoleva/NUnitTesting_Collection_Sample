@@ -115,10 +115,5 @@ namespace Collections
             return result.ToString();
         }
 
-        public bool GetIs()
-        {
-            return Is;
-        }
-
     }
 }
